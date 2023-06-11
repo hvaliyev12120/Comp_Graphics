@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <!-- You can only modify the contents of shaders -->
+        
+        <script id="vertex-shader" type="notjs">
+            attribute vec4 position;
+        
+            void main() {
+                gl_Position = position;
+            }
+        </script>
+        
+        <script id="fragment-shader" type="notjs">
+            precision mediump float;
+        
+            uniform vec4 uniformColor;  // Add a uniform variable for the color
+        
+            void main() {
+                gl_FragColor = uniformColor;  // Use the uniform color as the fragment color
+            }
+        </script>
+
+        <script src="../_common/webgl-utils.js"></script>
+        <script src="../_common/initShaders.js"></script>
+        <script src="../_common/MV.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <canvas id="webgl-canvas" width="400" height="300">
+            Browser doesn't support WebGL.
+        </canvas>
+    </body>
+</html>
